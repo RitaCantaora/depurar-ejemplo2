@@ -14,41 +14,40 @@
  /* Encontrar los errores del siguiente script, usando el depurador de Google Chrome */
 
 
+ 
+ var nombres = [];
+ var numeroNombres = NaN;
+ var nombreBuscado = "";
+ var encontrado = false;
+ 
+ while (isNaN(numeroNombres)) {
+   numeroNombres = parseInt(prompt("¿Cuántos nombres vas a leer?", "10"));
 
-var nombres=[];
-
-var numeroNombres=NaN; 
-
-
-var nombreBuscado="",encontrado=false;
-
-
-
-
- while(numeroNombres==NaN){
-	numeroNombres=parseInt(prompt("¿Cuántos nombres vas a leer?","10"));
- }
    
+ }
+ 
+ for (var i = 0; i < numeroNombres; i++) {
+   nombres[i] = prompt("Introduce un nombre", "Agapito");
+ }
+ 
+ nombreBuscado = prompt("¿Qué nombre deseas buscar?", "");
+ 
+ for (var i = 0; i < nombres.length; i++) {
+   if (nombres[i] === nombreBuscado) {
+	 encontrado = true;
+	 alert(nombreBuscado + " está en la posición " + i);
+	 
+   }
+ }
+ 
+ if (!encontrado) {
+   alert("No se encuentra el nombre buscado");
+ }
 
+ var mensaje="Los nombres publicados son ...\n\n";
+ for(var i=0;i<nombres.length;i++){
 
-for (var i=0;i<numeroNombres;i++){
-	nombres[i]=prompt("Introduce un nombre","Agapito ");
-} 
+mensaje += nombres[i] + "\n";
+ }
 
-
-nombreBuscado=prompt("¿Qué nombre deseas buscar?","");
-
-
-
-for (var i=0;i<nombres.length;i++){
-	if(nombres[i]=nombre_buscado){
-		encontrado=true;
-		alert(nombreBuscado+" está en la posición "i);
-	
-} 
-
-if(!encontrado)
-		prompt("No se encuentra el nombre buscado");
-		
-
-
+alert(mensaje);
